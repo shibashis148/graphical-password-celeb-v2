@@ -116,15 +116,15 @@ initCheck()
     const docSnap = await getDoc(docRef);
    if (docSnap.exists()){
   //  console.log(docSnap.data())
-   const attemptsCollectionRef = collection(db, "celeb_grphical_password", localStorage.getItem("name"), "attempts");
-   const attemptsSnapshot = await getDocs(attemptsCollectionRef);
+  //  const attemptsCollectionRef = collection(db, "celeb_grphical_password", localStorage.getItem("name"), "attempts");
+  //  const attemptsSnapshot = await getDocs(attemptsCollectionRef);
  
-   const numberOfAttempts = attemptsSnapshot.size;
+  //  const numberOfAttempts = attemptsSnapshot.size;
 
-   if(numberOfAttempts>=4){
-    toast.error("You have exhausted all recall attempts")
-    return
-   }
+  //  if(numberOfAttempts>=4){
+  //   toast.error("You have exhausted all recall attempts")
+  //   return
+  //  }
 
    if(docSnap.data().setup.toString()===selectedNumbers.toString()){
     await setDoc(doc(db, "celeb_grphical_password",localStorage.getItem("name"),"attempts",`recall-${Date.now()}`), {
